@@ -14,7 +14,7 @@ services:
     - 8.8.4.4
   volumes:
     - /etc/localtime:/etc/localtime:ro
-    - /mnt/ostrich/BT-Complete:/data/completed
+    - /mnt/ostrich/BT-Complete:/data/
     - /mnt/ostrich/BT-Active:/data/incomplete
     - /mnt/ostrich/kmiyake/Downloads/:/data/watching
     - /home/kmiyake/Developer/docker-transmission-openvpn/openvpn/custom/Trust.Zone-US-CA.ovpn:/etc/openvpn/custom/default.ovpn
@@ -24,16 +24,20 @@ services:
     - OPENVPN_PASSWORD=EfmXpwVS
     - OPENVPN_OPTS=--inactive 3600 --ping 10 --ping-exit 60
     - LOCAL_NETWORK=192.168.1.0/24
-    - TRANSMISSION_WEB_UI=combustion
+    - TRANSMISSION_WEB_UI=kettu
     - TRANSMISSION_WATCH_DIR_ENABLED=true
     - TRANSMISSION_WATCH_DIR=/data/watching
-    - TRANSMISSION_DOWNLOAD_DIR=/data/completed
+    - TRANSMISSION_DOWNLOAD_DIR=/data
     - TRANSMISSION_INCOMPLETE_DIR=/data/incomplete
     - TRANSMISSION_INCOMPLETE_DIR_ENABLED=true
     - TRANSMISSION_PORT_FORWARDING_ENABLED=true
     - TRANSMISSION_RATIO_LIMIT_ENABLED=true
     - TRANSMISSION_RATIO_LIMIT=1.5
     - TRANSMISSION_TRASH_ORIGINAL_TORRENT_FILES=true
+    - ENABLE_UFW=true
+    - TRANSMISSION_PEER_PORT_RANDOM_ON_START=true
+    - TRANSMISSION_PEER_LIMIT_GLOBAL=300
+    - TRANSMISSION_PEER_LIMIT_PER_TORRENT=60
     - PGID=1000
     - PUID=1000
 
