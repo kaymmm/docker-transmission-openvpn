@@ -14,7 +14,7 @@ services:
     - 8.8.4.4
   volumes:
     - /etc/localtime:/etc/localtime:ro
-    - /mnt/ostrich/BT-Complete:/data/
+    - /mnt/ostrich/BT-Complete:/data
     - /mnt/ostrich/BT-Active:/data/incomplete
     - /mnt/ostrich/kmiyake/Downloads/:/data/watching
     - /home/kmiyake/Developer/docker-transmission-openvpn/openvpn/custom/Trust.Zone-US-CA.ovpn:/etc/openvpn/custom/default.ovpn
@@ -38,8 +38,8 @@ services:
     - TRANSMISSION_PEER_PORT_RANDOM_ON_START=true
     - TRANSMISSION_PEER_LIMIT_GLOBAL=300
     - TRANSMISSION_PEER_LIMIT_PER_TORRENT=60
-    - PGID=1000
-    - PUID=1000
+    # - PGID=1000
+    # - PUID=1000
 
  proxy:
   image: haugene/transmission-openvpn-proxy
