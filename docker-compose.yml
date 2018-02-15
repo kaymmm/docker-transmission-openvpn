@@ -51,4 +51,4 @@ services:
   links:
     - transmission
   environment:
-    - RSS_URL=http://showrss.info/user/20536.rss?magnets=true&namespaces=true&name=null&quality=null&re=null
+    - RSS_URL=http://showrss.info/user/20536.rss?magnets=true&namespaces=false&name=null&quality=null&re=null
